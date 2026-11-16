@@ -14,7 +14,17 @@ It needs the Swift toolchain in `.swift-version`. Xcode is not required.
 
 ## Using it
 
-Click the bolt in the menu bar and pick Off, On, or a number of hours. The screen still dims and locks as usual. Quit turns it off first.
+Click the bolt in the menu bar and pick one of three modes.
+
+- **Allow sleep** lets the Mac and screen sleep normally, so Codex jobs can pause.
+- **Keep Mac awake, screen can sleep** keeps Codex and other jobs running while the screen can sleep.
+- **Keep Mac and screen awake** keeps jobs running and prevents the screen sleeping too.
+
+The awake modes apply to the whole Mac. They do not change the screen-lock settings or keep a closed laptop's built-in screen visible.
+
+In either awake mode, use **Turn off after** to choose 1, 2, 4 or 8 hours, or **Until turned off**. Picking a mode clears the timer. Quit allows sleep and releases the screen assertion first.
+
+The screen option uses `caffeinate -d -w` with the app's process identifier, so its assertion also ends if the app exits unexpectedly.
 
 On battery at 20% or below it turns itself off and the Mac sleeps normally.
 
@@ -31,4 +41,4 @@ To undo it, an administrator runs `sudo rm /private/etc/sudoers.d/meth`.
 
 ## If it gets stuck on
 
-The app reads the real setting each time you open the menu, so a crash shows up as On and you can switch it off there. From a terminal, `sudo -n /usr/bin/pmset -a disablesleep 0` does the same.
+The app reads the real setting each time you open the menu, so after a crash it shows **Keep Mac awake, screen can sleep** and you can select **Allow sleep**. From a terminal, `sudo -n /usr/bin/pmset -a disablesleep 0` does the same.
