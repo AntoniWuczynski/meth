@@ -3,7 +3,7 @@
 set -eu
 cd "$(dirname "$0")/.."
 
-swift build -c release
+swift build -c release --force-resolved-versions
 app=dist/Meth.app
 rm -rf "$app"
 mkdir -p "$app/Contents/MacOS"

@@ -12,6 +12,8 @@ open dist/Meth.app
 
 It needs the Swift toolchain in `.swift-version`. Xcode is not required.
 
+Automated tests cover power-setting and battery parsing. The menu modes, screen-sleep behaviour, timers and battery cut-off still need a manual walkthrough.
+
 ## Using it
 
 Click the bolt in the menu bar and pick one of three modes.
@@ -42,3 +44,7 @@ To undo it, an administrator runs `sudo rm /private/etc/sudoers.d/meth`.
 ## If it gets stuck on
 
 The app reads the real setting each time you open the menu, so after a crash it shows **Keep Mac awake, screen can sleep** and you can select **Allow sleep**. From a terminal, `sudo -n /usr/bin/pmset -a disablesleep 0` does the same.
+
+## Licence
+
+Released under the [MIT licence](LICENSE).
