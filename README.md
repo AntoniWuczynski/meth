@@ -12,6 +12,8 @@ open dist/Meth.app
 
 It needs the Swift toolchain in `.swift-version`. Xcode is not required.
 
+To start Meth each time you log in, move `Meth.app` to Applications and add it under **System Settings → General → Login Items & Extensions → Open at Login**.
+
 Automated tests cover power-setting and battery parsing. The menu modes, screen-sleep behaviour, timers and battery cut-off still need a manual walkthrough.
 
 ## Using it
